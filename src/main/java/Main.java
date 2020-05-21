@@ -27,10 +27,14 @@ public class Main {
 
         Lab2_1 lab2_1 = new Lab2_1(signals);
         lab2_1.generateF();
-        lab2_1.drawGraph();
+//        lab2_1.drawGraph();
 
         Lab2_2 lab2_2 = new Lab2_2(signals);
         lab2_2.generateF();
-        lab2_2.drawGraph();
+//        lab2_2.drawGraph();
+
+        System.out.println("DFT: " + lab2_1.spentTime + " nanoseconds");
+        System.out.println("FFT: " + lab2_2.spentTime + " nanoseconds");
+        System.out.println("FFT faster than DFT in " + (float)lab2_1.spentTime/lab2_2.spentTime + " times");
     }
 }

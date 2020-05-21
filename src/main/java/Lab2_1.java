@@ -6,12 +6,15 @@ public class Lab2_1 {
     private ArrayList<Long> seconds = new ArrayList<>();
     private int N;
 
+    public long spentTime = 0;
+
     public Lab2_1(ArrayList<Double> signals) {
         this.signals = signals;
         this.N = signals.size();
     }
 
     public void generateF() {
+        long start = System.nanoTime();
         for (int p = 0; p < N; p++) {
             seconds.add((long)p);
 
@@ -25,6 +28,7 @@ public class Lab2_1 {
 
             F.add(Math.sqrt(Math.pow(Fc, 2) + Math.pow(Fs, 2)));
         }
+        this.spentTime = System.nanoTime() - start;
     }
 
     public void drawGraph() {
